@@ -4,7 +4,6 @@
     "summary": "SUMMARY.md" 
   }, 
  "plugins": [
- 	"collapsible-menu",
  	"-sharing", 
  	"-search", 
  	"-highlight",
