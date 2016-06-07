@@ -30,7 +30,7 @@ info:
 
     Except for defined enrichment rules, Nakadi will never manipulate the content of any Event.
   version: '0.5.1'
-  
+
 securityDefinitions:
   oauth2:
     type: oauth2
@@ -49,39 +49,21 @@ securityDefinitions:
 paths:
   /metrics:
     get:
-      tags:
-        - monitoring
-      summary: Get monitoring metrics
+      description: Get monitoring metrics
       responses:
         '200':
           description: Ok
           schema:
             $ref: '#/definitions/Metrics'
-        '401':
-          description: Client is not authenticated
-          schema:
-            $ref: '#/definitions/Problem'
-        '500':
-          description: Server error
-          schema:
-            $ref: '#/definitions/Problem'
-        '503':
-          description: Service (temporarily) unavailable
-          schema:
-            $ref: '#/definitions/Problem'
   /event-types:
     get:
-      tags:
-        - schema-registry-api
       description: Returns a list of all registered `EventType`s
       parameters:
         - name: X-Flow-Id
           in: header
           description: |
-            The flow id of the request, which is written into the logs and passed to called services. Helpful
-            for operational troubleshooting and log analysis.
+            The flow id of the request. 
           type: string
-          format: flow-id
       responses:
         '200':
           description: Ok
@@ -89,22 +71,7 @@ paths:
             type: array
             items:
               $ref: '#/definitions/EventType'
-        '401':
-          description: Client is not authenticated
-          schema:
-            $ref: '#/definitions/Problem'
-        '500':
-          description: Server error
-          schema:
-            $ref: '#/definitions/Problem'
-        '503':
-          description: Service (temporarily) unavailable
-          schema:
-            $ref: '#/definitions/Problem'
-
     post:
-      tags:
-        - schema-registry-api
       security:
         - oauth2: ['nakadi.event_type.write']
       description: |
@@ -169,20 +136,9 @@ paths:
           description: Unprocessable Entity
           schema:
             $ref: '#/definitions/Problem'
-        '500':
-          description: Server error
-          schema:
-            $ref: '#/definitions/Problem'
-        '503':
-          description: Service (temporarily) unavailable
-          schema:
-            $ref: '#/definitions/Problem'
-
 
   /event-types/{name}:
     get:
-      tags:
-        - schema-registry-api
       description: |
         Returns the `EventType` identified by its name.
       parameters:
@@ -194,35 +150,14 @@ paths:
         - name: X-Flow-Id
           in: header
           description: |
-            The flow id of the request, which is written into the logs and passed to called services. Helpful
-            for operational troubleshooting and log analysis.
+            The flow id of the request.
           type: string
-          format: flow-id
       responses:
         '200':
           description: Ok
           schema:
             $ref: '#/definitions/EventType'
-        '401':
-          description: Client is not authenticated
-          schema:
-            $ref: '#/definitions/Problem'
-        '404':
-          description: EventType not found
-          schema:
-            $ref: '#/definitions/Problem'
-        '500':
-          description: Server error
-          schema:
-            $ref: '#/definitions/Problem'
-        '503':
-          description: Service (temporarily) unavailable
-          schema:
-            $ref: '#/definitions/Problem'
-
     put:
-      tags:
-        - schema-registry-api
       security:
         - oauth2: ['nakadi.event_type.write']
       description: |
@@ -248,37 +183,17 @@ paths:
         - name: X-Flow-Id
           in: header
           description: |
-            The flow id of the request, which is written into the logs and passed to called services. Helpful
-            for operational troubleshooting and log analysis.
+            The flow id of the request.
           type: string
-          format: flow-id
       responses:
         '200':
           description: Ok
-        '401':
-          description: Client is not authenticated
-          schema:
-            $ref: '#/definitions/Problem'
-        '404':
-          description: EventType not found.
-          schema:
-              $ref: '#/definitions/Problem'
         '422':
           description: Unprocessable Entity
           schema:
             $ref: '#/definitions/Problem'
-        '500':
-          description: Server error
-          schema:
-            $ref: '#/definitions/Problem'
-        '503':
-          description: Service (temporarily) unavailable
-          schema:
-            $ref: '#/definitions/Problem'
 
     delete:
-      tags:
-        - schema-registry-api
       security:
         - oauth2: ['nakadi.config.write']
       description: |
@@ -296,38 +211,15 @@ paths:
         - name: X-Flow-Id
           in: header
           description: |
-            The flow id of the request, which is written into the logs and passed to called services. Helpful
-            for operational troubleshooting and log analysis.
+            The flow id of the request.
           type: string
           format: flow-id
       responses:
         '200':
           description: EventType is successfuly removed
-        '401':
-          description: Client is not authenticated
-          schema:
-            $ref: '#/definitions/Problem'
-        '403':
-          description: Client is not authorized to perform this operation
-          schema:
-            $ref: '#/definitions/Problem'
-        '404':
-          description: EventType not found.
-          schema:
-              $ref: '#/definitions/Problem'
-        '500':
-          description: Server error
-          schema:
-            $ref: '#/definitions/Problem'
-        '503':
-          description: Service (temporarily) unavailable
-          schema:
-            $ref: '#/definitions/Problem'
 
   /event-types/{name}/events:
     post:
-      tags:
-        - stream-api
       security:
         - oauth2: ['nakadi.event_stream.write']
       description: |
@@ -368,8 +260,7 @@ paths:
         - name: X-Flow-Id
           in: header
           description: |
-            The flow id of the request, which is written into the logs and passed to called services. Helpful
-            for operational troubleshooting and log analysis.
+            The flow id of the request.
           type: string
           format: flow-id
         - name: event
@@ -389,40 +280,13 @@ paths:
             type: array
             items:
               $ref: '#/definitions/BatchItemResponse'
-        '400':
-          description: Bad request
-          schema:
-            $ref: '#/definitions/Problem'
-        '401':
-          description: Client is not authenticated
-          schema:
-            $ref: '#/definitions/Problem'
-        '404':
-          description: EventType not found.
-          schema:
-              $ref: '#/definitions/Problem'
-        '405':
-          description: Not allowed.
-          schema:
-              $ref: '#/definitions/Problem'
         '422':
           description: At least one event failed to be validated, enriched or partitioned. None were submitted.
           schema:
             type: array
             items:
               $ref: '#/definitions/BatchItemResponse'
-        '500':
-          description: Server error
-          schema:
-            $ref: '#/definitions/Problem'
-        '503':
-          description: Service (temporarily) unavailable
-          schema:
-            $ref: '#/definitions/Problem'
     get:
-      tags:
-        - stream-api
-        - unmanaged-api
       security:
         - oauth2: ['nakadi.event_stream.read']
       description: |
@@ -455,7 +319,7 @@ paths:
           description: EventType name to get events about
           type: string
           required: true
-        - name: X-nakadi-cursors
+        - name: X-Nakadi-Cursors
           in: header
           description: |
             Cursors indicating the partitions to read from and respective starting offsets.
@@ -550,37 +414,13 @@ paths:
             Stream format is a continuous series of `EventStreamBatch`s separated by `\n`
           schema:
             $ref: '#/definitions/EventStreamBatch'
-        '400':
-          description: Bad syntax
-          schema:
-            $ref: '#/definitions/Problem'
-        '401':
-          description: Not authenticated
-          schema:
-            $ref: '#/definitions/Problem'
-        '404':
-          description: EventType not found
-          schema:
-            $ref: '#/definitions/Problem'
         '422':
           description: Unprocessable entity
           schema:
             $ref: '#/definitions/Problem'
-        '500':
-          description: Internal Server Error. Details are provided on the returned `Problem`.
-          schema:
-            $ref: '#/definitions/Problem'
-        '503':
-          description: Service (temporarily) unavailable
-          schema:
-            $ref: '#/definitions/Problem'
 
-  '/event-types/{name}/partitions':
+  /event-types/{name}/partitions:
     get:
-      tags:
-        - unmanaged-api
-        - monitoring
-        - management-api
       security:
         - oauth2: ['nakadi.event_stream.read']
       description: |
@@ -598,8 +438,7 @@ paths:
         - name: X-Flow-Id
           in: header
           description: |
-            The flow id of the request, which is written into the logs and passed to called services. Helpful
-            for operational troubleshooting and log analysis.
+            The flow id of the request.
           type: string
           format: flow-id
       responses:
@@ -610,24 +449,9 @@ paths:
             description: An array of `Partition`s
             items:
               $ref: '#/definitions/Partition'
-        '404':
-          description: EventType not found
-          schema:
-            $ref: '#/definitions/Problem'
-        '500':
-          description: Server error
-          schema:
-            $ref: '#/definitions/Problem'
-        '503':
-          description: Service (temporarily) unavailable
-          schema:
-            $ref: '#/definitions/Problem'
 
   /event-types/{name}/partitions/{partition}:
     get:
-      tags:
-        - unmanaged-api
-        - management-api
       security:
         - oauth2: ['nakadi.event_stream.read']
 
@@ -646,8 +470,7 @@ paths:
         - name: X-Flow-Id
           in: header
           description: |
-            The flow id of the request, which is written into the logs and passed to called services. Helpful
-            for operational troubleshooting and log analysis.
+            The flow id of the request.
           type: string
           format: flow-id
       responses:
@@ -655,27 +478,9 @@ paths:
           description: OK
           schema:
             $ref: '#/definitions/Partition'
-        '401':
-          description: Client is not authenticated
-          schema:
-            $ref: '#/definitions/Problem'
-        '404':
-          description: Not found
-          schema:
-            $ref: '#/definitions/Problem'
-        '500':
-          description: Server error
-          schema:
-            $ref: '#/definitions/Problem'
-        '503':
-          description: Service (temporarily) unavailable
-          schema:
-            $ref: '#/definitions/Problem'
 
-  '/registry/validation-strategies':
+  /registry/validation-strategies:
     get:
-      tags:
-        - schema-registry-api
       description: |
         Lists all of the validation strategies supported by this installation of Nakadi.
 
@@ -688,19 +493,9 @@ paths:
             type: array
             items:
               type: string
-        '500':
-          description: Server error
-          schema:
-            $ref: '#/definitions/Problem'
-        '503':
-          description: Service (temporarily) unavailable
-          schema:
-            $ref: '#/definitions/Problem'
 
-  '/registry/enrichment-strategies':
+  /registry/enrichment-strategies:
     get:
-      tags:
-        - schema-registry-api
       description: |
         Lists all of the enrichment strategies supported by this installation of Nakadi.
 
@@ -713,20 +508,9 @@ paths:
             type: array
             items:
               type: string
-        '500':
-          description: Server error
-          schema:
-            $ref: '#/definitions/Problem'
-        '503':
-          description: Service (temporarily) unavailable
-          schema:
-            $ref: '#/definitions/Problem'
 
-
-  '/registry/partition-strategies':
+  /registry/partition-strategies:
     get:
-      tags:
-        - schema-registry-api
       description: |
         Lists all of the partition resolution strategies supported by this installation of Nakadi.
 
@@ -754,17 +538,6 @@ paths:
             type: array
             items:
               type: string
-        '500':
-          description: Server error
-          schema:
-            $ref: '#/definitions/Problem'
-
-
-# ################################### #
-#                                     #
-#             Definitions             #
-#                                     #
-# ################################### #
 
 definitions:
   Event:

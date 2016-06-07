@@ -61,13 +61,6 @@ be exposed in the API.**
 |**401**|Client is not authenticated|[Problem](#api-problem)|
 |**409**|Conflict, for example on creation of EventType with already existing name.|[Problem](#api-problem)|
 |**422**|Unprocessable Entity|[Problem](#api-problem)|
-|**500**|Server error|[Problem](#api-problem)|
-|**503**|Service (temporarily) unavailable|[Problem](#api-problem)|
-
-
-#### Tags
-
-* schema-registry-api
 
 
 #### Security
@@ -88,7 +81,7 @@ Returns a list of all registered `EventType`s
 
 |Type|Name|Description|Schema|Default|
 |---|---|---|---|---|
-|**Header**|**X-Flow-Id**  <br>*optional*|The flow id of the request, which is written into the logs and passed to called services. Helpful<br>for operational troubleshooting and log analysis.|string(flow-id)||
+|**Header**|**X-Flow-Id**  <br>*optional*|The flow id of the request.|string||
 
 
 #### Responses
@@ -96,14 +89,6 @@ Returns a list of all registered `EventType`s
 |HTTP Code|Description|Schema|
 |---|---|---|
 |**200**|Ok|< [EventType](#api-eventtype) > array|
-|**401**|Client is not authenticated|[Problem](#api-problem)|
-|**500**|Server error|[Problem](#api-problem)|
-|**503**|Service (temporarily) unavailable|[Problem](#api-problem)|
-
-
-#### Tags
-
-* schema-registry-api
 
 
 <a name="api-event-types-name-get"></a>
@@ -117,7 +102,7 @@ Returns the `EventType` identified by its name.
 
 |Type|Name|Description|Schema|Default|
 |---|---|---|---|---|
-|**Header**|**X-Flow-Id**  <br>*optional*|The flow id of the request, which is written into the logs and passed to called services. Helpful<br>for operational troubleshooting and log analysis.|string(flow-id)||
+|**Header**|**X-Flow-Id**  <br>*optional*|The flow id of the request.|string||
 |**Path**|**name**  <br>*required*|Name of the EventType to load.|string||
 
 
@@ -126,15 +111,6 @@ Returns the `EventType` identified by its name.
 |HTTP Code|Description|Schema|
 |---|---|---|
 |**200**|Ok|[EventType](#api-eventtype)|
-|**401**|Client is not authenticated|[Problem](#api-problem)|
-|**404**|EventType not found|[Problem](#api-problem)|
-|**500**|Server error|[Problem](#api-problem)|
-|**503**|Service (temporarily) unavailable|[Problem](#api-problem)|
-
-
-#### Tags
-
-* schema-registry-api
 
 
 <a name="api-event-types-name-put"></a>
@@ -154,7 +130,7 @@ conditions for backwards compatible extensions in the schema)
 
 |Type|Name|Description|Schema|Default|
 |---|---|---|---|---|
-|**Header**|**X-Flow-Id**  <br>*optional*|The flow id of the request, which is written into the logs and passed to called services. Helpful<br>for operational troubleshooting and log analysis.|string(flow-id)||
+|**Header**|**X-Flow-Id**  <br>*optional*|The flow id of the request.|string||
 |**Path**|**name**  <br>*required*|Name of the EventType to update.|string||
 |**Body**|**event-type**  <br>*required*|EventType to be updated.|[EventType](#api-eventtype)||
 
@@ -164,16 +140,7 @@ conditions for backwards compatible extensions in the schema)
 |HTTP Code|Description|Schema|
 |---|---|---|
 |**200**|Ok|No Content|
-|**401**|Client is not authenticated|[Problem](#api-problem)|
-|**404**|EventType not found.|[Problem](#api-problem)|
 |**422**|Unprocessable Entity|[Problem](#api-problem)|
-|**500**|Server error|[Problem](#api-problem)|
-|**503**|Service (temporarily) unavailable|[Problem](#api-problem)|
-
-
-#### Tags
-
-* schema-registry-api
 
 
 #### Security
@@ -198,7 +165,7 @@ succeed (failure is a 409 Conflic).
 
 |Type|Name|Description|Schema|Default|
 |---|---|---|---|---|
-|**Header**|**X-Flow-Id**  <br>*optional*|The flow id of the request, which is written into the logs and passed to called services. Helpful<br>for operational troubleshooting and log analysis.|string(flow-id)||
+|**Header**|**X-Flow-Id**  <br>*optional*|The flow id of the request.|string(flow-id)||
 |**Path**|**name**  <br>*required*|Name of the EventType to delete.|string||
 
 
@@ -207,16 +174,6 @@ succeed (failure is a 409 Conflic).
 |HTTP Code|Description|Schema|
 |---|---|---|
 |**200**|EventType is successfuly removed|No Content|
-|**401**|Client is not authenticated|[Problem](#api-problem)|
-|**403**|Client is not authorized to perform this operation|[Problem](#api-problem)|
-|**404**|EventType not found.|[Problem](#api-problem)|
-|**500**|Server error|[Problem](#api-problem)|
-|**503**|Service (temporarily) unavailable|[Problem](#api-problem)|
-
-
-#### Tags
-
-* schema-registry-api
 
 
 #### Security
@@ -263,7 +220,7 @@ at this stage will fail only the affected partitions.
 
 |Type|Name|Description|Schema|Default|
 |---|---|---|---|---|
-|**Header**|**X-Flow-Id**  <br>*optional*|The flow id of the request, which is written into the logs and passed to called services. Helpful<br>for operational troubleshooting and log analysis.|string(flow-id)||
+|**Header**|**X-Flow-Id**  <br>*optional*|The flow id of the request.|string(flow-id)||
 |**Path**|**name**  <br>*required*|Name of the EventType|string||
 |**Body**|**event**  <br>*required*|The Event being published|< [Event](#api-event) > array||
 
@@ -274,18 +231,7 @@ at this stage will fail only the affected partitions.
 |---|---|---|
 |**200**|All events in the batch have been successfully published.|No Content|
 |**207**|At least one event has failed to be submitted. The batch might be partially submitted.|< [BatchItemResponse](#api-batchitemresponse) > array|
-|**400**|Bad request|[Problem](#api-problem)|
-|**401**|Client is not authenticated|[Problem](#api-problem)|
-|**404**|EventType not found.|[Problem](#api-problem)|
-|**405**|Not allowed.|[Problem](#api-problem)|
 |**422**|At least one event failed to be validated, enriched or partitioned. None were submitted.|< [BatchItemResponse](#api-batchitemresponse) > array|
-|**500**|Server error|[Problem](#api-problem)|
-|**503**|Service (temporarily) unavailable|[Problem](#api-problem)|
-
-
-#### Tags
-
-* stream-api
 
 
 #### Security
@@ -327,7 +273,7 @@ the responsibility of the client. No commits are needed.
 |Type|Name|Description|Schema|Default|
 |---|---|---|---|---|
 |**Header**|**X-Flow-Id**  <br>*optional*|The flow id of the request, which is written into the logs and passed to called services. Helpful<br>for operational troubleshooting and log analysis.|string(flow-id)||
-|**Header**|**X-nakadi-cursors**  <br>*optional*|Cursors indicating the partitions to read from and respective starting offsets.<br><br>Assumes the offset on each cursor is not inclusive (i.e., first delivered Event is the<br>**first one after** the one pointed to in the cursor).<br><br>If the header is not present, the stream for all partitions defined for the EventType will start<br>from the newest event available in the system at the moment of making this call.<br><br>**Note:** we are not using query parameters for passing the cursors only because of the length<br>limitations on the HTTP query. Another way to initiate this call would be the POST method with<br>cursors passed in the method body. This approach can implemented in the future versions of this<br>API.|string(serialized json array of '#/definitions/Cursor')||
+|**Header**|**X-Nakadi-Cursors**  <br>*optional*|Cursors indicating the partitions to read from and respective starting offsets.<br><br>Assumes the offset on each cursor is not inclusive (i.e., first delivered Event is the<br>**first one after** the one pointed to in the cursor).<br><br>If the header is not present, the stream for all partitions defined for the EventType will start<br>from the newest event available in the system at the moment of making this call.<br><br>**Note:** we are not using query parameters for passing the cursors only because of the length<br>limitations on the HTTP query. Another way to initiate this call would be the POST method with<br>cursors passed in the method body. This approach can implemented in the future versions of this<br>API.|string(serialized json array of '#/definitions/Cursor')||
 |**Path**|**name**  <br>*required*|EventType name to get events about|string||
 |**Query**|**batch_flush_timeout**  <br>*optional*|Maximum time in seconds to wait for the flushing of each chunk (per partition).<br><br>* If the amount of buffered Events reaches `batch_limit` before this `batch_flush_timeout`<br>is reached, the messages are immediately flushed to the client and batch flush timer is reset.<br><br>* If 0 or undefined, will assume 30 seconds.|number(int32)|`"30"`|
 |**Query**|**batch_limit**  <br>*optional*|Maximum number of `Event`s in each chunk (and therefore per partition) of the stream.<br><br>* If 0 or unspecified will buffer Events indefinitely and flush on reaching of<br>`batch_flush_timeout`.|integer(int32)|`"1"`|
@@ -341,23 +287,12 @@ the responsibility of the client. No commits are needed.
 |HTTP Code|Description|Schema|
 |---|---|---|
 |**200**|Starts streaming to the client.<br>Stream format is a continuous series of `EventStreamBatch`s separated by `\n`|[EventStreamBatch](#api-eventstreambatch)|
-|**400**|Bad syntax|[Problem](#api-problem)|
-|**401**|Not authenticated|[Problem](#api-problem)|
-|**404**|EventType not found|[Problem](#api-problem)|
 |**422**|Unprocessable entity|[Problem](#api-problem)|
-|**500**|Internal Server Error. Details are provided on the returned `Problem`.|[Problem](#api-problem)|
-|**503**|Service (temporarily) unavailable|[Problem](#api-problem)|
 
 
 #### Produces
 
 * `application/x-json-stream`
-
-
-#### Tags
-
-* stream-api
-* unmanaged-api
 
 
 #### Security
@@ -381,7 +316,7 @@ consuming older messages.
 
 |Type|Name|Description|Schema|Default|
 |---|---|---|---|---|
-|**Header**|**X-Flow-Id**  <br>*optional*|The flow id of the request, which is written into the logs and passed to called services. Helpful<br>for operational troubleshooting and log analysis.|string(flow-id)||
+|**Header**|**X-Flow-Id**  <br>*optional*|The flow id of the request.|string(flow-id)||
 |**Path**|**name**  <br>*required*|EventType name|string||
 
 
@@ -390,16 +325,6 @@ consuming older messages.
 |HTTP Code|Description|Schema|
 |---|---|---|
 |**200**|OK|< [Partition](#api-partition) > array|
-|**404**|EventType not found|[Problem](#api-problem)|
-|**500**|Server error|[Problem](#api-problem)|
-|**503**|Service (temporarily) unavailable|[Problem](#api-problem)|
-
-
-#### Tags
-
-* management-api
-* monitoring
-* unmanaged-api
 
 
 #### Security
@@ -420,7 +345,7 @@ Returns the given `Partition` of this EventType
 
 |Type|Name|Description|Schema|Default|
 |---|---|---|---|---|
-|**Header**|**X-Flow-Id**  <br>*optional*|The flow id of the request, which is written into the logs and passed to called services. Helpful<br>for operational troubleshooting and log analysis.|string(flow-id)||
+|**Header**|**X-Flow-Id**  <br>*optional*|The flow id of the request.|string(flow-id)||
 |**Path**|**name**  <br>*required*|EventType name|string||
 |**Path**|**partition**  <br>*required*|Partition id|string||
 
@@ -430,16 +355,6 @@ Returns the given `Partition` of this EventType
 |HTTP Code|Description|Schema|
 |---|---|---|
 |**200**|OK|[Partition](#api-partition)|
-|**401**|Client is not authenticated|[Problem](#api-problem)|
-|**404**|Not found|[Problem](#api-problem)|
-|**500**|Server error|[Problem](#api-problem)|
-|**503**|Service (temporarily) unavailable|[Problem](#api-problem)|
-
-
-#### Tags
-
-* management-api
-* unmanaged-api
 
 
 #### Security
@@ -450,10 +365,10 @@ Returns the given `Partition` of this EventType
 
 
 <a name="api-metrics-get"></a>
-### Get monitoring metrics
-```
-GET /metrics
-```
+### GET /metrics
+
+#### Description
+Get monitoring metrics
 
 
 #### Responses
@@ -461,14 +376,6 @@ GET /metrics
 |HTTP Code|Description|Schema|
 |---|---|---|
 |**200**|Ok|[Metrics](#api-metrics)|
-|**401**|Client is not authenticated|[Problem](#api-problem)|
-|**500**|Server error|[Problem](#api-problem)|
-|**503**|Service (temporarily) unavailable|[Problem](#api-problem)|
-
-
-#### Tags
-
-* monitoring
 
 
 <a name="api-registry-enrichment-strategies-get"></a>
@@ -486,13 +393,6 @@ this method the available possibilities.
 |HTTP Code|Description|Schema|
 |---|---|---|
 |**200**|Returns a list of all enrichment strategies known to Nakadi|< string > array|
-|**500**|Server error|[Problem](#api-problem)|
-|**503**|Service (temporarily) unavailable|[Problem](#api-problem)|
-
-
-#### Tags
-
-* schema-registry-api
 
 
 <a name="api-registry-partition-strategies-get"></a>
@@ -525,12 +425,6 @@ Nakadi offers currently, out of the box, the following strategies:
 |HTTP Code|Description|Schema|
 |---|---|---|
 |**200**|Returns a list of all partitioning strategies known to Nakadi|< string > array|
-|**500**|Server error|[Problem](#api-problem)|
-
-
-#### Tags
-
-* schema-registry-api
 
 
 <a name="api-registry-validation-strategies-get"></a>
@@ -548,13 +442,6 @@ this method the available possibilities.
 |HTTP Code|Description|Schema|
 |---|---|---|
 |**200**|Returns a list of all validation strategies known to Nakadi|< string > array|
-|**500**|Server error|[Problem](#api-problem)|
-|**503**|Service (temporarily) unavailable|[Problem](#api-problem)|
-
-
-#### Tags
-
-* schema-registry-api
 
 
 
