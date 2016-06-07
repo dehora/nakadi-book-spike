@@ -4,6 +4,10 @@
 
 ## Event Types
 ### Event Type Data Model
+
+In Nakadi every Event has an _EventType_, and a stream of Events is exposed for 
+each registered EventType.
+
 #### Partitions
 #### Defining Schema
 #### Enrichment
