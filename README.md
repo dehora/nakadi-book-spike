@@ -19,22 +19,6 @@ The goal of Nakadi is to enable convenient development of event-driven applicati
 - Compatability with the [STUPS project](https://stups.io/). STUPS is Zalando's opne source platform infrastructure for running and securing microservices on AWS.
 
 - Built on proven infrastructure. Nakadi uses the excellent [Apache Kafka](http://kafka.apache.org/) as its internal message broker and the also excellent PostgreSQL as a backing database. 
-
-### Roadmap
-
-In the future the project will look at:
-
-* Discoverability of the resource structures flowing into the broker.
-
-* A managed API that allows consumers to subscribe and have stream offsets stored by the server.
-
-* Filtering of events for subscribing consumers.
-
-* Role base access control to data. 
-
-* Support for different streaming technologies and engines. 
-
-* A common envelope to allow arbitrary non-JSON message formats.
  
 ### Contributing
  

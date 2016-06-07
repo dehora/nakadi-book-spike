@@ -1,22 +1,27 @@
 # Getting Started
 
-In this section we'll walk through running a Nakadi service on your machine. Once you have the service up and running, you can jump to [Using Nakadi]() to see how produce and consume messages.
+In this section we'll walk through running a Nakadi service on your machine. 
+Once you have the service up and running, you can jump to 
+[Using Nakadi](./using.html) to see how produce and consume messages.
 
 ## Quickstart
 
-You can run a Nakadi service locally using Docker. If you don't have Docker installed, there are great instructions available on [the Docker website](https://www.docker.com/). 
-
+You can run a Nakadi service locally using Docker. If you don't have Docker 
+installed, there are great instructions available on 
+[the Docker website](https://www.docker.com/). 
 
 ### Running a Server
 
-From the project's home directory you can install and start a Nakadi container via the `gradlew` command:
+From the project's home directory you can install and start a Nakadi container 
+via the `gradlew` command:
 
 ```sh
 ./gradlew startDockerContainer
 ```
 
 This will start a docker container for the Nakadi server and another container 
-with its PostgreSQL, Kafka and Zookeeper dependencies. 
+with its PostgreSQL, Kafka and Zookeeper dependencies. You can read more about 
+the `gradlew` script in the [Building and Developing section](./developing.html)
 
 ### Stopping a Server
 
@@ -30,7 +35,8 @@ To stop the running Nakadi:
 
 ### Notes
 
-We maintain a [Frequently Asked Questions (FAQ)](./faq.html) in the documentation. If you're having trouble getting started, you might find an answer there.
+If you're having trouble getting started, you might find an answer in the
+[Frequently Asked Questions (FAQ)](./faq.html) section of the documentation. 
 
 #### Ports
 
@@ -41,7 +47,8 @@ Some ports need to be available to run the service:
 -  9092 for Kafka 
 -  2181 for Zookeeper 
   
-They allow the services to communicate with each other and should not be used by other applications. If you're running Docker on a Mac, take a look at [Mac OS and Docker]() below.
+They allow the services to communicate with each other and should not be used 
+by other applications. 
 
 #### Mac OS and Docker
 
@@ -61,7 +68,4 @@ its network settings in the VirtualBox UI, which look like this -
 
 ![vbox](./images/vbox.png)
 
-#### Gradle and the Gradle Wrapper
-
-Gradle's `gradlew` script is used to run server commands. You can read more about it in the [Building and Developing section](./developing.html)
 

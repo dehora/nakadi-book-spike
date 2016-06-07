@@ -1,5 +1,8 @@
 # API Reference
 
+This section describes the API. For a high level view see the section ["Using Nakadi"](./using.html).
+
+
 ## Introduction
 
 ## Event Types
