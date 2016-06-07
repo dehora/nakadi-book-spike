@@ -39,10 +39,4 @@ For working with an IDE, the `./gradlew eclipse` IDE task is available and you'l
 
 ![idea](./images/idea.png)
 
-## Contributing
-
-Nakadi accepts contributions from the open-source community, please see the Issue Tracker for current needs.
-
-Before making a contribution, please let us know by posting a comment to the relevant issue. If you would like to propose a new feature, please create a new issue explaining the feature you’d like to create.
-
 
