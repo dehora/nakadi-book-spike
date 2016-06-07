@@ -62,7 +62,7 @@ Alternatively you can set up port forwarding on the "default" machine through
 its network settings in the VirtualBox UI, which look like this - 
 
 
-![vbox](vbox.png)
+![vbox](./images/vbox.png)
 
 
 #### Docker Not Running

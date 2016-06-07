@@ -37,7 +37,7 @@ There are a few build commands for running Docker -
 
 For working with an IDE, the `./gradlew eclipse` IDE task is available and you'll be able to import the `build.gradle` into Intellij IDEA directly.
 
-![idea](idea.png)
+![idea](./images/idea.png)
 
 ## Contributing
 
