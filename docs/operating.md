@@ -2,6 +2,8 @@
 
 ## Architecture
 
+## Configuration
+
 ## Deployment
 
 ## Security

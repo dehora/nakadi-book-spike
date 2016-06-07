@@ -1,48 +1,8 @@
-# API Reference
+## API Reference
 
-This section describes the API. For a high level view see the section ["Using Nakadi"](./using.html).
+The Nakadi API is specified using an [Open API definition](https://github.com/zalando/nakadi/blob/nakadi-jvm/api/nakadi-event-bus-api.yaml).  This section provides an API reference and adds context, but the Open API definition should be considered authoritative. You can learn more about Open API from its website, [https://openapis.org](openapis.org).
 
+For a high level view on using the API see the section ["Using Nakadi"](./using.html).
 
-## Introduction
-
-## Event Types
-### Event Type Data Model
-
-In Nakadi every Event has an _EventType_, and a stream of Events is exposed for 
-each registered EventType.
-
-#### Partitions
-#### Defining Schema
-#### Enrichment
-### Create an Event Type 
-### View an Event Type 
-### Update an Event Type 
-### Delete an Event Type 
-### List Event Types 
-
-## Events
-### Event Model
-#### Undefined Events
-#### Business Events
-#### Data Change Events
-
-## Producing Events
-### Sending Events
-### Understanding Effective Schema
-### Event Validation
-### Header Processing
-
-## Consuming Events
-### Batch Response Model
-### Consuming a Stream
-### Offsets & Cursors
-### Keepalives
-
-## General API Features
-### OAuth & Authentication
-### Errors
-### Encoding
-### HTTP Headers and Responses
-### API Versioning & Compatability
 
 
