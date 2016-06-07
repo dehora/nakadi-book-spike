@@ -1,6 +1,6 @@
 ### Developer Documentation
 
-This is a documentation project for [Nakadi]. It's based on [Gitbook] and publishes content to [Github] Pages.
+This is a documentation project for [Nakadi](https://github.com/zalando/nakadi). It's based on [Gitbook](https://www.gitbook.com) and publishes content to Github Pages.
 
 Gitbook/Github pages want to use README.md as part of the book, so the howto is here.
 
