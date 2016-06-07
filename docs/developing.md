@@ -1,4 +1,4 @@
-# Developing
+# Building and Developing
 
 ## Getting the Code
 

@@ -1,5 +1,7 @@
 # Using Nakadi
 
+In this section we'll walk through using Nakadi to produce and consume events, and describe the main concepts. The ["API Reference"](./api-reference.html) contains a detailed description of the API.
+
 ## Nakadi Concepts
 
 The Nakadi API allows the publishing and consuming of _events_ over HTTP. 
@@ -188,7 +190,7 @@ Nakadi groups events into batch responses (see the next section, "Batch Response
 
 Technically, while each batch is a JSON document, the overall response is not valid JSON. For this reason it is served as the media type `application/x-stream-json` rather than `application/json`. Consumers can use the single line delimited structure to frame data for JSON parsing.
 
-### Batch Responses
+### Batch Response Formats
 
 A pretty-printed batch object looks like this -
 
@@ -206,9 +208,9 @@ Each batch belongs to a single partition. The `cursor` object describes the part
 
 The `events` array contains a list of events that were published in the order they arrived from the producer. Note that while the producer can also send batches of events, there is no strict correlation between the batches the consumer is given and the ones the producer sends. Nakadi will regroup events send by the producer and distribute them across partitions as needed.
 
-### Cursors, Offsets and Partitions
+### Cursors and Offsets
 
-By default the `events` resource will return data from all partitions of an event type stream and will do so from the end (or "tail") of the stream. To select only particular partitions and a position in the stream to start, you can supply an `X-Nakadi-Cursors` header in the request:
+By default the `/events` resource will return data from all partitions of an event type stream and will do so from the end (or "tail") of the stream. To select only particular partitions and a position in the stream to start, you can supply an `X-Nakadi-Cursors` header in the request:
 
 ```sh
 curl -v http://localhost:8080/event-types/order_received/events \
@@ -225,7 +227,7 @@ curl -v http://localhost:8080/event-types/order_received/events \
 ```
 
 
-#### Event Stream Keepalives
+### Event Stream Keepalives
 
 If there are no events to be delivered the server will keep a streaming connection open by periodically sending a batch with no events but which contains a `cursor` pointing to the current offset. For example:
 
