@@ -1,8 +1,7 @@
 # Table of Contents 
 * [Getting Started](docs/getting-started.md)
 * [Using Nakadi](docs/using.md)
-* [API Reference](docs/api-reference.md)
-  - [Overview](docs/api-spec-generated/overview.md)
+* [API Reference](docs/api-spec-generated/overview.md)
   - [Definitions](docs/api-spec-generated/definitions.md)
   - [Paths](docs/api-spec-generated/paths.md)
   - [Security](docs/api-spec-generated/security.md)
