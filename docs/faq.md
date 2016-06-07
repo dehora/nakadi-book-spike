@@ -16,3 +16,15 @@
 #### How do I disable OAuth for local development?
 
 #### How do I contribute to the project?
+
+#### I get the message "Is the docker daemon running on this host?" - Help!
+
+If you get the message "Is the docker daemon running on this host?" first check that Docker and VirtualBox are running. If you know they are running, you might want to run this command -
+
+```sh
+eval "$(docker-machine env default)"
+```
+
+
+
+

@@ -30,6 +30,8 @@ To stop the running Nakadi:
 
 ### Notes
 
+We maintain a [Frequently Asked Questions (FAQ)](./faq.html) in the documentation. If you're having trouble getting started, you might find an answer there.
+
 #### Ports
 
 Some ports need to be available to run the service: 
@@ -40,10 +42,6 @@ Some ports need to be available to run the service:
 -  2181 for Zookeeper 
   
 They allow the services to communicate with each other and should not be used by other applications. If you're running Docker on a Mac, take a look at [Mac OS and Docker]() below.
-
-#### Gradle and the Gradle Wrapper
-
-The `gradlew` command is a Gradle "wrapper" script. A [Gradle wrapper](https://docs.gradle.org/current/userguide/gradle_wrapper.html) is tied to a specific version of Gradle, so when you first run one of the commands above, it will download the corresponding Gradle distribution and use it to execute the command.
 
 #### Mac OS and Docker
 
@@ -61,16 +59,9 @@ docker-machine ssh default \
 Alternatively you can set up port forwarding on the "default" machine through 
 its network settings in the VirtualBox UI, which look like this - 
 
-
 ![vbox](./images/vbox.png)
 
+#### Gradle and the Gradle Wrapper
 
-#### Docker Not Running
+Gradle's `gradlew` script is used to run server commands. You can read more about it in the [Building and Developing section](./developing.html)
 
-If you get the message "Is the 
-docker daemon running on this host?" but you know Docker (and/or VirtualBox) are 
-running, you might want to run this command - 
-
-```sh
-eval "$(docker-machine env default)"
-```
