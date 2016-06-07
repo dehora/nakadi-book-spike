@@ -2,11 +2,11 @@
 
 Nakadi is a distributed event broker. 
 
-## Why Nakadi?
+### Why Nakadi?
 
 The goal of Nakadi is to enable convenient development of event-driven applications and asynchronous microservices by allowing producers to publish streams of event data to multiple consumers, without direct integration. It does this by exposing a [HTTP API](/api/nakadi-event-bus-api.yaml) to allow microservices to maintain their boundaries and not force a particular technology dependency on producers and consumers - if you can speak HTTP you can use Nakadi.
 
-## Features
+### Features
 
 - A secured HTTP API. This allows microservices teams to maintain service boundaries, and not directly depend on any specific message broker technology. Access to the API can be managed and secured using OAuth scopes.
 
@@ -20,7 +20,7 @@ The goal of Nakadi is to enable convenient development of event-driven applicati
 
 - Built on proven infrastructure. Nakadi uses the excellent [Apache Kafka](http://kafka.apache.org/) as its internal message broker and the also excellent PostgreSQL as a backing database. 
 
-## Roadmap
+### Roadmap
 
 In the future the project will look at:
 
@@ -36,7 +36,13 @@ In the future the project will look at:
 
 * A common envelope to allow arbitrary non-JSON message formats.
  
-
+### Contributing
+ 
+ Nakadi accepts contributions from the open-source community. Please see the 
+ [project issue tracker](https://github.com/zalando/nakadi/issues) for things to work on.
+ 
+ Before making a contribution, please let us know by posting a comment to the relevant issue. And if you would like to propose a new feature, do start a new issue explaining the feature you’d like to contribute.
+ 
 
 
 
