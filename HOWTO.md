@@ -9,6 +9,7 @@ Gitbook/Github pages want to use README.md as part of the book, so the howto is 
 You'll need to install npm to get going. Once you've got that and have the project cloned, `cd` to the project's home directory and run
 
 ```
+npm run docs:prepare
 npm install gitbook-cli --save-dev
 ```
 
