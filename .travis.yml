@@ -1,0 +1,13 @@
+language: node_js
+node_js:
+  - 5.10.1
+install:
+  - npm install
+script:
+  - bash ./gh_pages_publish.sh  
+env:
+  global:
+    secure: l6mT/3VmDmXMr892wcxveffMNwmAxrAykeG+oQRcN0EzvorChDw0OyxHPcCILr80tD7P/6GCmADEYRnUhTeTydgLEF3m/lXK+WjdpljK0dXvMExggBVwtEJFEl1yg/AmhB45+wB7tU+vD7NtH9BBWtRI6IFzBmEihEj6gs7NZaEi8mzspOkT71d/iJGZSkt+7e/mEWrBYHnsnkQBSGBXDV6jF8dOk1eIJsmLNJ/kf1B373lJnTlRiWE2Rj5UaEf6DKSaboPi+lv+6R/ZYjhvpjZF4y6eUoxFmfYpSPwnRc0E7O+q00IMThhhjY+ZxTj78aKicOHZLp/iVDDBM2ikNvFyLrNo8sF+mIpZvzWNspgGEHJLagPA8cexnnXB+wS5OU1zZV6NL0/xXEcU6CkxkUKnOFrgDHrKeJMPTiFSKZCRo0vMY3PDzPiqZSsmSIYQmHhmzsqVsLE5vgOGBa08buKq0IX40vf4mlGHRPE19SOF3Z5jS4s4Fd9mDcjZVM5McvykXakkZo2hjnv8JSVXnQIJTf8+YZs2kYlBcDomblII2Qd9NmXLswHIa+VX3S1A62gyLTrEc49cZew4OqwRTJe3KHNPKx1PWhLj9H86RiG68O23rhBS+Q7iDLfqfc3w1budNBBsZ+NIXraOFYMloxrPMLZ9hGVCGYr3y3tMJiM=
+notifications:
+    email:
+      on_success: bill@dehora.net
