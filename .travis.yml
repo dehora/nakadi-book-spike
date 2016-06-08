@@ -1,4 +1,4 @@
-# this lets us control multiple runtimes and work with java+node
+# trusty lets us control multiple runtimes and work with java+node
 sudo: required
 dist: trusty
 language: node_js

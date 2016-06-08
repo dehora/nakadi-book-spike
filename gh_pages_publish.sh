@@ -4,31 +4,34 @@ set -e
 SOURCE_BRANCH="master"
 TARGET_BRANCH="gh-pages"
 
-echo "deploy attempt from $TRAVIS_BRANCH"
+echo "Deploy attempt from $TRAVIS_BRANCH"
 
 if [ "$TRAVIS_BRANCH" != "$SOURCE_BRANCH" ]; then
-    echo "no deploy allowing on branch $TRAVIS_BRANCH, running build instead"
+    echo "Publish not allowed on a non-master branch, $TRAVIS_BRANCH, running build instead"
     npm run docs:build
     exit 0
 fi
 
 if [ "$TRAVIS_PULL_REQUEST" != "false" ]; then
-    echo "no deploy allowed on pr, running build"
+    echo "Publish not allowed from a pr, running build instead"
     npm run docs:build
     exit 0
 fi
 
-echo "Publishing new pages from branch $TRAVIS_BRANCH"
 
-rev=$(git rev-parse --short HEAD)
+GITREV=$(git rev-parse --short HEAD)
 git config --global user.name "Travis CI"
 git config --global user.email "travis@travis-ci.org";
+
+echo "Publishing new pages from branch $TRAVIS_BRANCH rev ${GITREV}"
 
 npm run docs:build 
 cd _book
 git init
-git commit --allow-empty -m "Update GitHub Pages: ${rev}"
+git commit --allow-empty -m "Update GitHub Pages: ${GITREV}"
 git checkout -b gh-pages
 git add -A .
-git commit -am "Update GitHub Pages: ${rev}"
-git push -q https://$GH_PAGES_TOKEN@github.com/dehora/nakadi-book-spike gh-pages --force
+git commit -am "Update GitHub Pages: ${GITREV}"
+
+# -q to stop the token being printed
+git push -q -f https://$GH_PAGES_TOKEN@github.com/dehora/nakadi-book-spike gh-pages
