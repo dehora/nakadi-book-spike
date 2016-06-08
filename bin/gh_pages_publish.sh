@@ -22,6 +22,8 @@ fi
 
 
 GITREV=$(git rev-parse --short HEAD)
+_oldname=$(git config --get user.name)
+_oldmail=$(git config --get user.email)
 git config --global user.name "Travis CI"
 git config --global user.email "travis@travis-ci.org";
 
@@ -37,3 +39,7 @@ git commit -am "Update GitHub Pages: ${GITREV}"
 
 # -q to stop the token being printed
 git push -q -f https://$GH_PAGES_TOKEN@github.com/dehora/nakadi-book-spike gh-pages
+
+git config --global user.name "${_oldname}"
+git config --global user.email "${_oldmail}"
+
