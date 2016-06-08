@@ -29,7 +29,7 @@ The goal of Nakadi is to enable convenient development of event-driven applicati
 
 ### About
 
-This book is generated using Gitbook and published to GitHub Pages via [a Travis CI build](https://travis-ci.org/dehora/nakadi-book-spike). The project is [here](https://github.com/dehora/nakadi-book-spike) and the toolchain is described [here](https://github.com/dehora/nakadi-book-spike/blob/master/HOWTO.md). The project has an [MIT License (MIT)](https://github.com/dehora/nakadi-book-spike/blob/master/LICENSE).
+This book is generated using Gitbook and published to GitHub Pages via [a Travis CI build](https://travis-ci.org/dehora/nakadi-book-spike). The project is [here](https://github.com/dehora/nakadi-book-spike) and the toolchain is described [here](https://github.com/dehora/nakadi-book-spike/blob/master/HOWTO.md). The project has an [MIT License](https://github.com/dehora/nakadi-book-spike/blob/master/LICENSE).
  
 
 
