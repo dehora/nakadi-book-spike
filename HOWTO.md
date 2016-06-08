@@ -91,7 +91,7 @@ For this to work it will need a `GH_PAGES_TOKEN` envar set with a [personal acce
 
 This section is generated from a copy of the Open API definition, that has been tidied up and optimised for people reading the content rather than machine generation. The definition files are kept in `./docs/api-spec-oai` and the publishing code targets the symlinked file `nakadi-oai-current.yaml`.
 
-Generation uses the [swagger2markup](http://swagger2markup.github.io/swagger2markup/1.0.1-SNAPSHOT/#_configuration) project to convert the yaml to markdown and place the output into the `api-spec-generated` directory. The swagger2markup configuration is in the `./bin` directory and the additional reference text is in the `api-spec-extensions` directory. The swagger2markup jar files are checked in source to make it easy to run a build.
+Generation uses the [swagger2markup](http://swagger2markup.github.io/swagger2markup/1.0.1-SNAPSHOT) project to convert the yaml to markdown and place the output into the `api-spec-generated` directory. The swagger2markup configuration is in the `./bin` directory and the additional reference text is in the `api-spec-extensions` directory. The swagger2markup jar files are checked in source to make it easy to run a build.
 
 #### Picking up Changes
 

@@ -31,7 +31,7 @@ HTTP/1.1 200 OK
 
 As shown above, the event stream accepts an array of events. 
 
-### Event Validation and Effective Schema
+### Validation Strategies and Effective Schema
 
 Each event sent to the stream will be validated relative to the [effective schema](./event-types.html#effective-schema) for the event type's category. 
 
@@ -39,6 +39,10 @@ The validation behavior and the effective schema varies based on the event type'
 
 Once the event is validated, it is placed into a partition and made available 
 to consumers. If the event is invalid, it is rejected by Nakadi.
+
+### Enrichment Strategies
+
+_@@@TODO_
 
 ### Event Ordering
 

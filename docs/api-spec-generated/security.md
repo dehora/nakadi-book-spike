@@ -6,10 +6,10 @@ limited to generic scopes. The project may look to support more granular
 scopes in the future such as limiting access to particular event types and streams.
 
 
-<a name="api-securityscheme"></a>
+<a name="securityscheme"></a>
 ## Security
 
-<a name="api-oauth2"></a>
+<a name="oauth2"></a>
 ### oauth2
 *Type* : oauth2  
 *Flow* : implicit  

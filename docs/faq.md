@@ -17,6 +17,10 @@
 
 #### How do I contribute to the project?
 
+#### Which partitioning strategy should I use?
+
+#### How do I configure the number of partitions?
+
 #### I get the message "Is the docker daemon running on this host?" - Help!
 
 If you get the message "Is the docker daemon running on this host?" first check that Docker and VirtualBox are running. If you know they are running, you might want to run this command -
