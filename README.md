@@ -16,7 +16,7 @@ The goal of Nakadi is to enable convenient development of event-driven applicati
 
 -  Low latency event delivery. Once a publisher sends an event using a simple HTTP POST, consumers can be pushed to via a streaming HTTP connection, allowing near real-time event processing. The consumer connection has keepalive controls and support for managing stream offsets. 
 
-- Compatability with the [STUPS project](https://stups.io/). STUPS is Zalando's opne source platform infrastructure for running and securing microservices on AWS.
+- Compatibility with the [STUPS project](https://stups.io/). STUPS is Zalando's open source platform infrastructure for running and securing microservices on AWS.
 
 - Built on proven infrastructure. Nakadi uses the excellent [Apache Kafka](http://kafka.apache.org/) as its internal message broker and the also excellent PostgreSQL as a backing database. 
  

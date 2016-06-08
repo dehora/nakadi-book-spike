@@ -1,6 +1,10 @@
 # Table of Contents 
 * [Getting Started](docs/getting-started.md)
 * [Using Nakadi](docs/using.md)
+  - [Concepts](docs/using/concepts.md)
+  - [Event Types](docs/using/event-types.md)
+  - [Producing Events](docs/using/producing-events.md)
+  - [Consuming Events](docs/using/consuming-events.md)
 * [API Reference](docs/api-spec-generated/overview.md)
   - [Definitions](docs/api-spec-generated/definitions.md)
   - [Paths](docs/api-spec-generated/paths.md)
