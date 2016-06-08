@@ -14,6 +14,8 @@
   - [Travis CI  Publishing](#travis-ci--publishing)
   - [Manual Publishing](#manual-publishing)
 - [The API Reference Section](#the-api-reference-section)
+  - [Generating the Section](#generating-the-section)
+  - [Picking up Changes](#picking-up-changes)
 
 <!-- END doctoc generated TOC please keep comment here to allow auto update -->
 ----
