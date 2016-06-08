@@ -8,6 +8,8 @@ The goal of Nakadi is to enable convenient development of event-driven applicati
 
 Operations is also a factor behind Nakadi's design. Managing upgrades to systems like Kafka becomes easier when technology sits behind an API and isn't a shared dependency between microservices. Asychronous event delivery can be a simpler overall option for a microservice architecture compared to synchronized and deep call paths that have to be mitigated with caches, bulkheads and circuit breakers. 
 
+The section ["Comparison to Other Systems"](./docs/using/comparison.html) describes Nakadi relative to systems such as Apache Kafka, AWS Kinesis, Google Pub/Sub and Azure EventHub.
+
 ### Features
 
 - **A secured HTTP API.** This allows microservices teams to maintain service boundaries, and not directly depend on any specific message broker technology. Access to the API can be managed and secured using OAuth scopes.
@@ -21,8 +23,6 @@ Operations is also a factor behind Nakadi's design. Managing upgrades to systems
 - **Compatibility with the [STUPS project](https://stups.io/).** STUPS is Zalando's open source platform infrastructure for running and securing microservices on AWS.
 
 - **Built on proven infrastructure.** Nakadi uses the excellent [Apache Kafka](http://kafka.apache.org/) as its internal message broker and the also excellent PostgreSQL as a backing database. 
- 
-The section ["Comparison to Other Systems"](./docs/using/comparison.html) describes Nakadi relative to systems such as Apache Kafka, AWS Kinesis, Google Pub/Sub and Azure EventHub.
 
 ### Contributing
  
