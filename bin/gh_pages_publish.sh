@@ -1,5 +1,5 @@
 #!/bin/bash
-set -e
+set -o errexit -o nounset
 
 echo "Running Github Pages Publish from `pwd`"
 
