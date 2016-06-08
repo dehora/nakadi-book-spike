@@ -22,7 +22,7 @@ Operations is also a factor behind Nakadi's design. Managing upgrades to systems
 
 - **Built on proven infrastructure.** Nakadi uses the excellent [Apache Kafka](http://kafka.apache.org/) as its internal message broker and the also excellent PostgreSQL as a backing database. 
  
-The section ["Comparison to Other Systems"](./docs/using/comparison.html) describes Nakadi relative to systems such as Apache Kafka, AWS Kinesis, Google Pub/Sub and 
+The section ["Comparison to Other Systems"](./docs/using/comparison.html) describes Nakadi relative to systems such as Apache Kafka, AWS Kinesis, Google Pub/Sub and Azure EventHub.
 
 ### Contributing
  
