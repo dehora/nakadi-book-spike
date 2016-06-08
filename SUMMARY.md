@@ -10,5 +10,6 @@
   - [Definitions](docs/api-spec-generated/definitions.md)
   - [Security](docs/api-spec-generated/security.md)
 * [Building and Developing](docs/developing.md)
-* [Operations](docs/operating.md)
-* [FAQ](docs/faq.md)   
+* [Operations (todo)](docs/operating.md)
+* [Recipes and Patterns (todo)](docs/recipes.md)
+* [FAQ (partial)](docs/faq.md)   
