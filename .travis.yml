@@ -1,8 +1,9 @@
+# this lets us control multiple runtimes and work with java+node
+sudo: required
+dist: trusty
 language: node_js
 node_js:
   - 5.10.1
-jdk:
-  - oraclejdk8
 install:
   - npm install
 script:
