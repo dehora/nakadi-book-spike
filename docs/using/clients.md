@@ -6,7 +6,6 @@ Nakadi does not ship with a client, but there are some open source clients avail
 |-----------------|--------------|------------|
 | Nakadi Klients  | Scala & Java | https://github.com/zalando/nakadi-klients |
 | Reactive Nakadi | Scala/Akka   | https://github.com/zalando/reactive-nakadi |
-| Nakadi Consumer | Scala/Akka   | https://github.bus.zalan.do/ais/nakadi-consumer |
 | Fahrschein      | Java         | https://github.com/zalando-incubator/fahrschein |
 
 We'll add more clients to this section as they appear. Nakadi doesn't support these clients; issues and pull requests should be filed with the client project.
