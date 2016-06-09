@@ -1,15 +1,12 @@
 ## Comparison to Other Systems
 
-In this section, we'll look at how Nakadi fits in with the stream broker/processing ecosystems. Notably we'll compare it to Apache Kafka, as that's a common question, but also look briefly at the main cloud offerings in this area.
+In this section, we'll look at how Nakadi fits in with the stream broker/processing ecosystems. Notably we'll compare it to Apache Kafka, as that's a common question, but also look briefly at some of the main cloud offerings in this area.
 
   - [Apache Kafka](#kafka)
   - [Google Pub/Sub](#pubsub)
   - [AWS Kinesis](#kinesis)
   - [Azure EventHub](#eventhub)
-  - [Confluent](#confluent)
-
-
-
+  - [Confluent Platform](#confluent)
 
 <a name="kafka"></a>
 ### Apache Kafka
@@ -65,6 +62,6 @@ Like Nakadi and Pub/Sub, AWS Kinesis has a HTTP API to hide its details. Kinesis
 _@@@ todo_
 
 <a name="confluent"></a>
-### Confluent
+### Confluent Platform
 
 _@@@ todo_
