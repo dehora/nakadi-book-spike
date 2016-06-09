@@ -1,0 +1,18 @@
+.grunt/
+
+# idea
+/.idea
+
+# node
+node_modules
+
+# gitbook
+*/_book
+_book
+*.epub
+*.mobi
+*.pdf
+.project
+
+.DS_Store
+scratch.md

@@ -1,0 +1,488 @@
+
+<!DOCTYPE HTML>
+<html lang="" >
+    <head>
+        <title>Event Types · GitBook</title>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 3.1.0">
+        
+        
+        
+    
+    <link rel="stylesheet" href="../../gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-anchors/plugin.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-fontsettings/website.css">
+                
+            
+        
+
+    
+
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+
+        
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../../gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="../../gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    <link rel="next" href="producing-events.html" />
+    
+    
+    <link rel="prev" href="concepts.html" />
+    
+
+    </head>
+    <body>
+        
+<div class="book">
+    <div class="book-summary">
+        
+            
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+
+    
+
+    
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="../../">
+            
+                <a href="../../">
+            
+                    
+                    Introduction
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2" data-path="../getting-started.html">
+            
+                <a href="../getting-started.html">
+            
+                    
+                    Getting Started
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3" data-path="../using.html">
+            
+                <a href="../using.html">
+            
+                    
+                    Using Nakadi
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.3.1" data-path="concepts.html">
+            
+                <a href="concepts.html">
+            
+                    
+                    Concepts
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter active" data-level="1.3.2" data-path="event-types.html">
+            
+                <a href="event-types.html">
+            
+                    
+                    Event Types
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.3" data-path="producing-events.html">
+            
+                <a href="producing-events.html">
+            
+                    
+                    Producing Events
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.4" data-path="consuming-events.html">
+            
+                <a href="consuming-events.html">
+            
+                    
+                    Consuming Events
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.5" data-path="clients.html">
+            
+                <a href="clients.html">
+            
+                    
+                    Client Libraries
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.6" data-path="comparison.html">
+            
+                <a href="comparison.html">
+            
+                    
+                    (todo) Compared to Other Systems
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4" data-path="../api-spec-generated/overview.html">
+            
+                <a href="../api-spec-generated/overview.html">
+            
+                    
+                    API Reference
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.4.1" data-path="../api-spec-generated/paths.html">
+            
+                <a href="../api-spec-generated/paths.html">
+            
+                    
+                    Paths
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.2" data-path="../api-spec-generated/definitions.html">
+            
+                <a href="../api-spec-generated/definitions.html">
+            
+                    
+                    Definitions
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.3" data-path="../api-spec-generated/security.html">
+            
+                <a href="../api-spec-generated/security.html">
+            
+                    
+                    Security
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5" data-path="../developing.html">
+            
+                <a href="../developing.html">
+            
+                    
+                    Building and Developing
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6" data-path="../operating.html">
+            
+                <a href="../operating.html">
+            
+                    
+                    (todo) Operations
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7" data-path="../recipes.html">
+            
+                <a href="../recipes.html">
+            
+                    
+                    (todo) Recipes and Patterns
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8" data-path="../faq.html">
+            
+                <a href="../faq.html">
+            
+                    
+                    (partial) FAQ
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+            Published with GitBook
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href="../.." >Event Types</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+                                <section class="normal markdown-section">
+                                
+                                <h2 id="event-types"><a name="undefined" class="plugin-anchor" href="#undefined"><span class="fa fa-link"></span></a>Event Types</h2>
+<p>The object containing the information describing an event is called an 
+<em>event type</em>.</p>
+<p>To publish events an event type must exist in Nakadi. The event type 
+contains information such as its name, a category, the owning application, 
+strategies for partitioning and enriching data, and a 
+<a href="http://json-schema.org/" _target="blank">JSON Schema</a>. Nakadi has an event type registry 
+API that lists all the available event types.</p>
+<h3 id="event-types-and-categories"><a name="undefined" class="plugin-anchor" href="#undefined"><span class="fa fa-link"></span></a>Event Types and Categories</h3>
+<p>There are three main <em>categories</em> of event type defined by Nakadi - </p>
+<ul>
+<li><p><strong>Undefined Event</strong>: A free form category suitable for events that are entirely custom to the producer.</p>
+</li>
+<li><p><strong>Data Change Event</strong>: An event that represents a change to a record or other item, or a new item. Change events are associated with a create, update, delete, or snapshot operation. </p>
+</li>
+<li><p><strong>Business Event</strong>: An event that is part of, or drives a business process, such as a state transition in a customer order. </p>
+</li>
+</ul>
+<p>Each event category enables different capabilities for an event type, notably their schema and validation rules, which we&apos;ll describe next.</p>
+<p><a class="anchor" href="#effective-schema" id="effective-schema"></a></p>
+<h3 id="event-type-schema-and-effective-schema"><a name="undefined" class="plugin-anchor" href="#undefined"><span class="fa fa-link"></span></a>Event Type Schema and Effective Schema</h3>
+<p>The events for the &apos;business&apos; and &apos;data&apos; categories have their own pre-defined 
+schema structures, based on JSON Schema, as well as a schema that is defined 
+custom to the event type when it is created. The pre-defined structures 
+describe common fields for an event and the custom schema for the event is 
+defined when the event type is created.  </p>
+<p>The schema for an event type is submitted as a JSON Schema and will only declare the custom part of the event. This means the pre-defined schema for 
+the &apos;business&apos; and &apos;data&apos; categories don&apos;t need to be declared (and should not 
+be declared). The &apos;undefined&apos; category has no-predefined schema.</p>
+<p>When an event for one of these categories is posted to the server, it is 
+expected to conform to the <em>combination</em> of the pre-defined schema and to the 
+custom schema defined for the event type, and not just the custom part of the event. This combination is called the <em>effective schema</em> and is validated by Nakadi for the &apos;business&apos; and &apos;data&apos; types.</p>
+<p>The &apos;undefined` category behaves slightly different to the other categories. Its effective schema is exactly the same as the one created with its event type definition (it has no extra structure), but it is <strong>not</strong> validated by Nakadi. Instead an &apos;undefined&apos; event type&apos;s schema is simply made available in the event type registry for consumers to use if they wish.</p>
+<p>The custom schema for an event type can be as simple as 
+<code>{ &quot;\additionalProperties\&quot;: true }</code> to allow arbitrary JSON, but will usually 
+have a more specific definition :)</p>
+<h3 id="creating-an-event-type"><a name="undefined" class="plugin-anchor" href="#undefined"><span class="fa fa-link"></span></a>Creating an Event Type</h3>
+<p>An event type can be created by posting to the <code>/event-types</code> resource. </p>
+<p>This example shows a <code>business</code> category event type called <code>order_received</code>:</p>
+<pre><code class="lang-sh">curl -v -XPOST http://localhost:8080/event-types -d &apos;{
+  &quot;name&quot;: &quot;order_received&quot;,
+  &quot;owning_application&quot;: &quot;acme-order-service&quot;,
+  &quot;category&quot;: &quot;business&quot;,
+  &quot;partition_strategy&quot;: &quot;random&quot;,
+  &quot;enrichment_strategies&quot;: [&quot;metadata_enrichment&quot;],
+  &quot;schema&quot;: {
+    &quot;type&quot;: &quot;json_schema&quot;,
+    &quot;schema&quot;: &quot;{ \&quot;properties\&quot;: { \&quot;order_number\&quot;: { \&quot;type\&quot;: \&quot;string\&quot; } } }&quot;
+  }
+}&apos;
+</code></pre>
+<p>The event type has a simple JSON Schema submitted as an escaped JSON string describing the <code>order number</code> and thus only declare the custom part of the schema. The <code>partition_strategy</code> 
+says events will be randomly allocated to partitions, and the owner&apos;s name is 
+<code>&quot;acme-order-service&quot;</code>. The <code>enrichment_strategies</code> array says to apply <code>metadata_enrichment</code> to submitted events (common metadata is a feature of some categories). </p>
+<p>A successful request will result in a <code>201 Created</code> response. </p>
+<p>Once an event type is created, it is added to the <em>event type registry</em> and its details are visible from its URI in the registry. Events can then be posted to its stream and consumed by multiple clients. </p>
+<p>The exact required fields depend on the event type&apos;s category, but <code>name</code>, <code>owning_application</code> and <code>schema</code> are always expected. The 
+<a href="api-reference.html">&quot;API Reference&quot;</a> contains more details on event types.</p>
+<h3 id="partitions"><a name="undefined" class="plugin-anchor" href="#undefined"><span class="fa fa-link"></span></a>Partitions</h3>
+<p>An event type&apos;s stream is divided into one or more <em>partitions</em> and each event is placed into exactly one partition. Partitions preserve the order of events - once an event is added to a partition its position relative to other events in the partition is never changed. The details of the partitions and their offsets for an event type are available via its <code>/partitions</code> resource.</p>
+<h4 id="partition-ordering"><a name="undefined" class="plugin-anchor" href="#undefined"><span class="fa fa-link"></span></a>Partition Ordering</h4>
+<p>Each partition is a fully ordered log, and there is no global ordering across partitions. Clients can consume a stream&apos;s partitions independently and track their position across the stream.</p>
+<p><img src="../images/partitions.png" alt="/images/partitions.png"></p>
+<p>Dividing a stream this way allows the overall system to be scaled and provide 
+good throughput for producers and consumers. It&apos;s similar to how systems such as <a href="http://kafka.apache.org/documentation.html#intro_topics" _target="blank">Apache Kafka</a> and AWS Kinesis work. </p>
+<h4 id="partition-strategies"><a name="undefined" class="plugin-anchor" href="#undefined"><span class="fa fa-link"></span></a>Partition Strategies</h4>
+<p>The assignment of events to a partition is controllable by the producer. The 
+<code>partition_strategy</code> field determines how events are mapped to partitions. Nakadi offers the following strategies:</p>
+<ul>
+<li><p><code>random</code>: the partition is selected randomly and events will be evenly distributed across partitions. Random is the default option used by Nakadi.</p>
+</li>
+<li><p><code>hash</code>: the partition is selected by hashing the value of the fields
+defined in the event type&apos;s <code>partition_key_fields</code>. In practice this means events that are about the same logical entity and which have the same values for the partition key will be sent to the same partition.</p>
+</li>
+<li><p><code>user_defined</code>: the partition is set by the producer when sending an event. This option is only available for the &apos;business&apos; and data&apos; categories.</p>
+</li>
+</ul>
+<p>Which option to use depends on your requirements. When order matters, hash is usually the right choice. For very high volume streams where order doesn&apos;t matter, random can be a good choice as it load balances data well. The user defined option is a power tool, unless you know you need it, use hash or random.</p>
+
+                                
+                                </section>
+                            
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                <a href="concepts.html" class="navigation navigation-prev " aria-label="Previous page: Concepts">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                
+                
+                <a href="producing-events.html" class="navigation navigation-next " aria-label="Next page: Producing Events">
+                    <i class="fa fa-angle-right"></i>
+                </a>
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"Event Types","level":"1.3.2","depth":2,"next":{"title":"Producing Events","level":"1.3.3","depth":2,"path":"docs/using/producing-events.md","ref":"docs/using/producing-events.md","articles":[]},"previous":{"title":"Concepts","level":"1.3.1","depth":2,"path":"docs/using/concepts.md","ref":"docs/using/concepts.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["-sharing","-search","-highlight","anchors"],"pluginsConfig":{"anchors":{},"lunr":{"maxIndexSize":1000000},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"docs/using/event-types.md","mtime":"2016-06-09T13:38:53.272Z","type":"markdown"},"gitbook":{"version":"3.1.0","time":"2016-06-09T13:40:13.761Z"},"basePath":"../..","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    <script src="../../gitbook/gitbook.js"></script>
+    <script src="../../gitbook/theme.js"></script>
+    
+        
+        <script src="../../gitbook/gitbook-plugin-lunr/lunr.min.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-lunr/search-lunr.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+        
+    
+
+    </body>
+</html>
+
