@@ -14,12 +14,13 @@ Relative to Apache Kafka, Nakadi provides a number of benefits while still lever
 
 - Operations is also a factor in Nakadi's design. Managing upgrades to systems like Kafka becomes easier when technology sits behind an API and isn't a shared dependency between microservices. Asychronous event delivery can be a simpler overall option for a microservice architecture compared to synchronized and deep call paths that have to be mitigated with caches, bulkheads and circuit breakers.
 
+- Nakadi is designed to support autonomous service teams. In Zalando, where Nakadi originated, each team has autonomy and control of their microservices stack to let them move quickly and take ownership. When running on AWS, this extends all the way down - every team has their own account structure, and to ensure a level of security and compliance teams run standard AMIs and constrain how they interact to HTTPS using OAuth2 access controls. This means we tend to want to run any shared infrastructure as a service with a HTTP based interface. Granted, not everyone has this need - many shops on AWS won't have per-team account structures and will tend to use a smaller number of shared environments, but we've found it valulable to be able leverage the power of systems like Kafka in a way that fits in with this service architecture. 
+
 - Nakadi has some characteristics in common with Kafka, which is to be expected as the Kafka community has done an excellent job in defining the space. The logical model is basically the same - streams have partitions, messages in a partition maintain their order, but there's no order across partitions. One producer can send an event to be read by multiple consumers and consumers have access to offset data that they can checkpoint. There are also some differences. For example Nakadi doens't expose Topics as a concept in its API. Instead there are Event Types that define structure and ownership details as well as the stream. Also consumers receive messages in batches and each batch is checkpointed rather than an individual message.
 
 In short, Nakadi is best seen as a complement to Kafka. It allows teams to use Kafka within their own boundaries but not be forced into sharing it as a global dependency.
 
 ### Google Pub/Sub
-
 
 
 
