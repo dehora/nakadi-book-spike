@@ -39,7 +39,7 @@ Like Nakadi and Pub/Sub, AWS Kinesis has a HTTP API to hide its details. Kinesis
 
 - Kinesis expose shards (partitions) for a stream and supplies enough information to support per message checkpointing with semantics much like Kafka and Nakadi. Nakadi only supplies checkpointing information per batch of messages. Kinesis allows setting the partition hash key directly, whereas Nakadi computes the key based on the data. 
 
-- Kinesis uses a polling model for consumers, whereas Nakadi maintains a streaming connection Kinesis consumers use a "shard iterator" to a grab pages of message, and then make a new HTTP request to grab another page. Kinesis limits the rate at which this can be done across all consumers (typically 5 transactions per second per open shard), which places an upper bound on consumer throughput. Kinesis has a broad range of choices for resuming from a position in the stream, Nakadi allows
+- Kinesis uses a polling model for consumers, whereas Nakadi maintains a streaming connection Kinesis consumers use a "shard iterator" to a grab pages of message, and then make a new HTTP request to grab another page. Kinesis limits the rate at which this can be done across all consumers (typically 5 transactions per second per open shard), which places an upper bound on consumer throughput. Kinesis has a broad range of choices for resuming from a position in the stream, Nakadi allows access only from the beginning and a named offset.
 
 - Kinesis uses a common envelope structure for producing and consuming messages, and does not define any higher level structures beyond that. Payload data is submitted as an opaque base64 blob.
 
