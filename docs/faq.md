@@ -29,6 +29,8 @@ If you get the message "Is the docker daemon running on this host?" first check 
 eval "$(docker-machine env default)"
 ```
 
+#### What's the reason for oldest available offset being bigger than newest offset?
+
 
 
 
