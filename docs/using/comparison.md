@@ -37,8 +37,6 @@ Like Nakadi, Pub/Sub has a HTTP API which hides details from producers and consu
 
 Like Nakadi and Pub/Sub, AWS Kinesis has a HTTP API to hide its details. Kinesis and Nakadi are more similar to each other than Pub/Sub, but there are some differences.
 
-- Pub/Sub lets you acknowledge every message individually rather than checkpointing a position in a logical log. This approach makes its model fairly different to the other systems mentioned here and on the face of it, it means that there are no inbuilt ordering assurances. 
-
 - Kinesis expose shards (partitions) for a stream and supplies enough information to support per message checkpointing with semantics much like Kafka and Nakadi. Nakadi only supplies checkpointing information per batch of messages. Kinesis allows setting the partition hash key directly, whereas Nakadi computes the key based on the data. 
 
 - Kinesis uses a polling model for consumers, whereas Nakadi maintains a streaming connection Kinesis consumers use a "shard iterator" to a grab pages of message, and then make a new HTTP request to grab another page. Kinesis limits the rate at which this can be done across all consumers (typically 5 transactions per second per open shard), which places an upper bound on consumer throughput. Kinesis has a broad range of choices for resuming from a position in the stream, Nakadi allows
