@@ -22,9 +22,33 @@ In short, Nakadi is best seen as a complement to Kafka. It allows teams to use K
 
 ### Google Pub/Sub
 
+Like Nakadi, Pub/Sub has a HTTP API which hides details from producers and consumers and makes it suitable for as microservices backplane. There are some differences worth noting:
+
+- Pub/Sub lets you acknowledge every message individually rather than checkpointing a position in a logical log. This approach makes its model fairly different to the other systems mentioned here; it implies that there are no inbuilt ordering assurances. 
+
+- Pub/Sub requires a susbcription to be setup before messages can be consumed, and which can be used to manage delivery state for messages. In that sense it's not unlike a traditional queuing system in that the server manages state for the consumer, with the slight twist that messages have a kind of random access for acknowledgements instead of competing for work at the top of queue. Nakadi may offer a similar subcription option in the future via a managed API.
+
+- Pub/Sub uses a polling model for consumers. Consumers grab a page of messages to process and acknowlege, and then make a new HTTP request to grab another page. Nakadi maintains a streaming connection to consumers, and will push events as they arrive.
+
+- Pub/Sub uses a common envelope structure for producing and consuming messages, and does not define any higher level structures beyond that.
 
 
 ### AWS Kinesis
+
+Like Nakadi and Pub/Sub, AWS Kinesis has a HTTP API to hide its details. Kinesis and Nakadi are more similar to each other than Pub/Sub, but there are some differences.
+
+- Pub/Sub lets you acknowledge every message individually rather than checkpointing a position in a logical log. This approach makes its model fairly different to the other systems mentioned here and on the face of it, it means that there are no inbuilt ordering assurances. 
+
+- Kinesis expose shards (partitions) for a stream and supplies enough information to support per message checkpointing with semantics much like Kafka and Nakadi. Nakadi only supplies checkpointing information per batch of messages. Kinesis allows setting the partition hash key directly, whereas Nakadi computes the key based on the data. 
+
+- Kinesis uses a polling model for consumers, whereas Nakadi maintains a streaming connection Kinesis consumers use a "shard iterator" to a grab pages of message, and then make a new HTTP request to grab another page. Kinesis limits the rate at which this can be done across all consumers (typically 5 transactions per second per open shard), which places an upper bound on consumer throughput. Kinesis has a broad range of choices for resuming from a position in the stream, Nakadi allows
+
+- Kinesis uses a common envelope structure for producing and consuming messages, and does not define any higher level structures beyond that. Payload data is submitted as an opaque base64 blob.
+
+- AWS restrict the number of streams available to an account to quite a low starting number, and messages can be stored for a maximum of 7 days whereas Nakadi can support a large number of event types and the expiration for events is configurable.
+
+- Kinesis supports resizing the number of shards in a stream wheres partition counts in Nakadi are fixed once set for an event type.
+
 
 ### Azure Event Hub
 
